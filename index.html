@@ -5,36 +5,73 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,300&display=swap');
+    </style>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+    </style>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 
 <body class="grey lighten-2">
-  <nav>
+  <nav id="navbar">
     <div class="nav-wrapper teal lighten-2 z-depth-4">
 
-      <a href="#" class="brand-logo"><i class="large material-icons">movie</i>Movie Roulette</a>
+      <a href="#" class="brand-logo center" id="navtxt"><i class="large material-icons">movie</i>Movie Roulette</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="sass.html">Choose a Genre</a></li>
+        <li><a href="index.html/genre">Choose a Genre</a></li>
       </ul>
     </div>
   </nav>
   <main class="container blue lighten-5 z-depth-2">
-    <div class="drop-down blue-text text-darken-2">
-      <label for="movies">
-      <h4>Choose a Movie:</h4>
+    <div class="blue-text text-darken-2" id="drop-down">
+      <label for="movies" id="movies-card">
+        <h4 class="genre">Choose a Genre:</h4>
       </label>
       <select name="movies" id="movies">
         <option value="horror">Horror</option>
-        <option value="action">Saab</option>
+        <option value="action">Action</option>
         <option value="romance">Romance</option>
         <option value="comedy">Comedy</option>
       </select>
     </div>
   </main>
-
+<section class="container yellow lighten-5 z-depth-3" id="toprated">
+  <div class="text-darken-2">
+    <h3 id="toptenmovies" class="red lighten-2">
+      Best rated movies:
+    </h3>
+  </div>
+</section>
+<footer class="page-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col l6 s12">
+        <h5 class="white-text" id="footertitle">Movie Roulette</h5>
+        <p class="grey-text text-lighten-4"></p>
+      </div>
+      <div class="col l4 offset-l2 s12">
+        <h5 class="white-text">Created By:</h5>
+        <ul>
+          <li><a class="grey-text text-lighten-3" href="#!">Nelson Rivera</a></li>
+          <li><a class="grey-text text-lighten-3" href="#!">Cameron McDougall</a></li>
+          <li><a class="grey-text text-lighten-3" href="#!">Jonathan ...</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="container">
+    Northwestern Bootcamp 2021
+    </div>
+  </div>
+</footer>
 </body>
 
 </html>
