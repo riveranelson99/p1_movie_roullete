@@ -1,0 +1,33 @@
+* ::before ::after {
+    display: flex;
+}
+
+body{
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+}
+
+#drop-down{
+    height: 250px;
+    justify-content: center;
+}
+
+#navbar{
+    height: 15vh;
+}
+
+#toprated{
+    width: 115vw;
+    height: 100vh;
+    padding-bottom: 20vh;
+}
+
+#navtxt{
+    line-height: 10vh;
+    padding-top: flex;
+    font-family: 'Special Elite', Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+#footertitle {
+    font-family: 'Special Elite', Arial, Helvetica, sans-serif;
+}
