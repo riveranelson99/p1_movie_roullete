@@ -1,6 +1,6 @@
 var $apiKey = "67a7bac5263ae44afd8231f3402a5637";
 var $tmdbGenres = "https://api.themoviedb.org/3/genre/movie/list?api_key=67a7bac5263ae44afd8231f3402a5637";
-var $tmdbTop = "https://api.themoviedb.org/3/discover/movie?api_key=b317866565935a86e63d93d931149cda&with_genres=35";
+// var $tmdbTop = `https://api.themoviedb.org/3/discover/movie?api_key=${$apiKey}&with_genres=${genreId}&language=en-US&vote_count.gte=2500&sort_by=popularity.desc`;
 
 function test() {
     fetch($tmdbGenres)
@@ -12,7 +12,9 @@ function test() {
     })
 }
 
-function test2() {
+function movieGenre (genreId) {
+    var $tmdbTop = `https://api.themoviedb.org/3/discover/movie?api_key=${$apiKey}&with_genres=${genreId}&language=en-US&vote_count.gte=2500&sort_by=popularity.desc`;
+
     fetch($tmdbTop)
     .then(function(response) {
         return response.json();
@@ -70,18 +72,19 @@ function test2() {
     })
 }
 
-function getMoviesByGenre(genreId) {
+// function getMoviesByGenre(genreId) {
     
-    var requestUrl = `https://api.themoviedb.org/3/discover/movie?api_key=${tmdbApiKey}&with_genres=${genreId}&language=en-US&vote_count.gte=2500&sort_by=popularity.desc`;
-  
-    fetch(requestUrl)
-      .then(function (response) {
-        return response.json();
-      })
-      .then(function (data) {
-        console.log(data);
-      });
-}
+//     var requestUrl = `https://api.themoviedb.org/3/discover/movie?api_key=${tmdbApiKey}&with_genres=${genreId}&language=en-US&vote_count.gte=2500&sort_by=popularity.desc`;
+
+//     fetch(requestUrl)
+//     .then(function (response) {
+//         return response.json();
+//     })
+//     .then(function (data) {
+//         console.log(data);
+        
+//     });
+// }
 
 function generateDropdownFromGenreIdList() {
 
@@ -128,5 +131,5 @@ function generateDropdownFromGenreIdList() {
 }
 
 test();
-test2();
+movieGenre();
 generateDropdownFromGenreIdList();
