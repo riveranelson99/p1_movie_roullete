@@ -21,48 +21,51 @@ function test2() {
         console.log(data);
         var $movie = document.getElementById("movie-list");
 
-        var $row = document.createElement("div");
-        $row.setAttribute("class", "row");
+        for (i = 0; i < 10; i++) {
 
-        var $size = document.createElement("div");
-        $size.setAttribute("class", "col s12 m3");
+            var $row = document.createElement("div");
+            $row.setAttribute("class", "row");
 
-        var $card = document.createElement("div");
-        $card.setAttribute("class", "card");
+            var $size = document.createElement("div");
+            $size.setAttribute("class", "col s12 m3");
 
-        var $img = document.createElement("div");
-        $img.setAttribute("class", "card-image");
+            var $card = document.createElement("div");
+            $card.setAttribute("class", "card");
 
-        var $content = document.createElement("div");
-        $content.setAttribute("class", "card-content");
+            var $img = document.createElement("div");
+            $img.setAttribute("class", "card-image");
 
-        var $action = document.createElement("div");
-        $action.setAttribute("class", "card-action");
+            var $content = document.createElement("div");
+            $content.setAttribute("class", "card-content");
 
-        var $poster = document.createElement("img");
-        $poster.setAttribute("style", "background-image: url(https://image.tmdb.org/t/p/w200" + data.results[0].poster_path + ")");
+            var $action = document.createElement("div");
+            $action.setAttribute("class", "card-action");
 
-        var $title = document.createElement("span");
-        $title.setAttribute("class", "card-title");
-        $title.textContent = data.results[0].title;
+            var $poster = document.createElement("img");
+            $poster.setAttribute("src", "https://image.tmdb.org/t/p/w300" + data.results[i].poster_path);
 
-        var $description = document.createElement("p");
-        $description.textContent = data.results[0].overview;
+            var $title = document.createElement("span");
+            $title.setAttribute("class", "card-title");
+            $title.textContent = data.results[i].title;
 
-        var $trailer = document.createElement("a");
-        $trailer.setAttribute("href", "#");
-        $trailer.textContent = ("This is a link");
+            var $description = document.createElement("p");
+            $description.textContent = data.results[i].overview;
 
-        $content.appendChild($title);
-        $content.appendChild($description);
-        $img.appendChild($poster);
-        $action.appendChild($trailer);
-        $card.appendChild($img);
-        $card.appendChild($content);
-        $card.appendChild($action);
-        $size.appendChild($card);
-        $row.appendChild($size);
-        $movie.appendChild($row);
+            var $trailer = document.createElement("a");
+            $trailer.setAttribute("href", "#");
+            $trailer.textContent = ("This is a link");
+
+            $content.appendChild($title);
+            $content.appendChild($description);
+            $img.appendChild($poster);
+            $action.appendChild($trailer);
+            $card.appendChild($img);
+            $card.appendChild($content);
+            $card.appendChild($action);
+            $size.appendChild($card);
+            $row.appendChild($size);
+            $movie.appendChild($row);
+        }
     })
 }
 
@@ -80,35 +83,35 @@ function generateDropdownFromGenreIdList() {
     const url = `https://api.themoviedb.org/3/genre/movie/list?api_key=${tmdbApiKey}`;
     
     fetch(url)  
-      .then(  
+    .then(  
         function(response) {  
-          if (response.status !== 200) {  
+        if (response.status !== 200) {  
             console.warn('Looks like there was a problem. Status Code: ' + 
-              response.status);
-              console.log(response);  
+            response.status);
+            console.log(response);  
             return;  
-          }
+        }
     
           // Examine the text in the response  
-          response.json().then(function(data) {  
+        response.json().then(function(data) {  
             console.log(data.genres[0].name, data.genres[0].id);
             //console.log(data[0].id);
-  
-              let option;
+
+            let option;
         
             for (let i = 0; i < data.genres.length; i++) {
-              option = document.createElement('option');
+            option = document.createElement('option');
                 option.text = data.genres[i].name;
                 option.value = data.genres[i].id;
                 dropdown.add(option);
             }    
-          });  
+        });  
         }  
-      )  
-      .catch(function(err) {  
+    )  
+    .catch(function(err) {  
         console.error('Fetch Error -', err);  
-      });
-  }
+    });
+}
 
 test();
 test2();
