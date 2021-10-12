@@ -1,7 +1,7 @@
 var $apiKey = "67a7bac5263ae44afd8231f3402a5637";
 var $tmdbGenres = "https://api.themoviedb.org/3/genre/movie/list?api_key=67a7bac5263ae44afd8231f3402a5637";
 var $tmdbTop = `https://api.themoviedb.org/3/discover/movie?api_key=${$apiKey}&with_genres=${genreId}&language=en-US&vote_count.gte=2500&sort_by=popularity.desc`;
-var submitBtn = document.getElementById('btn');
+var submitBtn = document.querySelector('.btn');
 
 
 function test() {
@@ -132,12 +132,12 @@ function generateDropdownFromGenreIdList() {
     });
 }
 
-test();
-movieGenre();
+//test();
+//movieGenre();
 generateDropdownFromGenreIdList();
 
 submitBtn.addEventListener("click", function() {
-    var dropdownSelection = document.getElementById("movies");
-    var genreId = dropdownSelection.value
-    console.log(genreId)
+    var dropdownSelection = document.getElementById("movies").value;
+    console.log(dropdownSelection);
+    movieGenre(dropdownSelection);
   });
