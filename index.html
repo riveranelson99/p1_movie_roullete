@@ -10,10 +10,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,300&display=swap');
-    </style>
+  </style>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
-    </style>
+  </style>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -30,24 +30,25 @@
   </nav>
   <main class="container blue lighten-5 z-depth-2">
     <div class="blue-text text-darken-2" id="drop-down">
-      <label for="movies" id="movies-card">
-        <h4 class="genre">Choose a Genre:</h4>
-      </label>
-      <select name="movies" id="movies">
-        <option value="horror">Horror</option>
-        <option value="action">Action</option>
-        <option value="romance">Romance</option>
-        <option value="comedy">Comedy</option>
-      </select>
+      <div class="input-field col s12">
+        <select id="movies">
+          <option value="" disabled selected>Choose your option</option>
+          <option value="1">Option 1</option>
+          <option value="2">Option 2</option>
+          <option value="3">Option 3</option>
+        </select>
+        <label></label>
+      </div>
+
     </div>
   </main>
-<section class="container yellow lighten-5 z-depth-3" id="toprated">
-  <div id="movie-list" class="text-darken-2">
-    <h3 id="toptenmovies" class="red lighten-2">
-      Best rated movies:
-    </h3>
+  <section class="container yellow lighten-5 z-depth-3" id="toprated">
+    <div id="movie-list" class="text-darken-2">
+      <h3 id="toptenmovies" class="red lighten-2">
+        Best rated movies:
+      </h3>
 
-  <!-- <div class="row">
+      <!-- <div class="row">
     <div class="col s12 m6">
         <div class="card">
           <div class="card-image">
@@ -64,32 +65,33 @@
     </div>
   </div> -->
 
-  </div>
-</section>
-<footer class="page-footer">
-  <div class="container">
-    <div class="row">
-      <div class="col l6 s12">
-        <h5 class="white-text" id="footertitle">Movie Roulette</h5>
-        <p class="grey-text text-lighten-4"></p>
-      </div>
-      <div class="col l4 offset-l2 s12">
-        <h5 class="white-text">Created By:</h5>
-        <ul>
-          <li><a class="grey-text text-lighten-3" href="https://github.com/riveranelson99">Nelson Rivera</a></li>
-          <li><a class="grey-text text-lighten-3" href="https://github.com/j-goldrath">Cameron McDougall</a></li>
-          <li><a class="grey-text text-lighten-3" href="https://github.com/CJMc0d3">Jonathan Goldrath</a></li>
-        </ul>
-      </div>
     </div>
-  </div>
-  <div class="footer-copyright">
+  </section>
+  <footer class="page-footer">
     <div class="container">
-    Northwestern Bootcamp 2021
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text" id="footertitle">Movie Roulette</h5>
+          <p class="grey-text text-lighten-4"></p>
+        </div>
+        <div class="col l4 offset-l2 s12">
+          <h5 class="white-text">Created By:</h5>
+          <ul>
+            <li><a class="grey-text text-lighten-3" href="https://github.com/riveranelson99">Nelson Rivera</a></li>
+            <li><a class="grey-text text-lighten-3" href="https://github.com/j-goldrath">Cameron McDougall</a></li>
+            <li><a class="grey-text text-lighten-3" href="https://github.com/CJMc0d3">Jonathan Goldrath</a></li>
+          </ul>
+        </div>
+      </div>
     </div>
-  </div>
-</footer>
+    <div class="footer-copyright">
+      <div class="container">
+        Northwestern Bootcamp 2021
+      </div>
+    </div>
+  </footer>
 </body>
 
 <script src="assets/js/script.js"></script>
+
 </html>
