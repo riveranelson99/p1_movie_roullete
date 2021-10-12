@@ -1,6 +1,7 @@
 var $apiKey = "67a7bac5263ae44afd8231f3402a5637";
 var $tmdbGenres = "https://api.themoviedb.org/3/genre/movie/list?api_key=67a7bac5263ae44afd8231f3402a5637";
 var $tmdbTop = "https://api.themoviedb.org/3/discover/movie?api_key=b317866565935a86e63d93d931149cda&with_genres=35";
+var submitBtn = document.getElementById('btn')
 
 function test() {
     fetch($tmdbGenres)
