@@ -66,9 +66,22 @@ function test2() {
     })
 }
 
+function getMoviesByGenre(genreId) {
+    
+    var requestUrl = `https://api.themoviedb.org/3/discover/movie?api_key=${tmdbApiKey}&with_genres=${genreId}&language=en-US&vote_count.gte=2500&sort_by=popularity.desc`;
+  
+    fetch(requestUrl)
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (data) {
+        console.log(data);
+      });
+}
+
 function generateDropdownFromGenreIdList() {
 
-    let dropdown = document.getElementById('genre-dropdown');
+    let dropdown = document.getElementById('movies');
     dropdown.length = 0;
     
     let defaultOption = document.createElement('option');
