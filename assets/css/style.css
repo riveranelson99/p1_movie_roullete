@@ -7,7 +7,7 @@ body{
 }
 
 #drop-down{
-    height: 250px;
+    height: 125px;
     justify-content: center;
 }
 
@@ -17,7 +17,7 @@ body{
 
 #toprated{
     width: 115vw;
-    height: 125vh;
+    height: 145vh;
     padding-bottom: 20vh;
 }
 
