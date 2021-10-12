@@ -17,7 +17,7 @@ body{
 
 #toprated{
     width: 115vw;
-    height: 100vh;
+    height: 125vh;
     padding-bottom: 20vh;
 }
 
@@ -35,3 +35,8 @@ body{
 select{
     display: block;
 }
+
+@media only screen and (min-width: 601px) {
+.row .col.m3 {
+    width: 20%;
+}}
