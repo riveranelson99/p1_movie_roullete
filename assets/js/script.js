@@ -93,7 +93,7 @@ function generateDropdownFromGenreIdList() {
     dropdown.add(defaultOption);
     dropdown.selectedIndex = 0;
     
-    const url = `https://api.themoviedb.org/3/genre/movie/list?api_key=${tmdbApiKey}`;
+    const url = `https://api.themoviedb.org/3/genre/movie/list?api_key=${$apiKey}`;
     
     fetch(url)  
     .then(  
@@ -128,4 +128,4 @@ function generateDropdownFromGenreIdList() {
 
 test();
 test2();
-
+generateDropdownFromGenreIdList();

@@ -31,3 +31,7 @@ body{
 #footertitle {
     font-family: 'Special Elite', Arial, Helvetica, sans-serif;
 }
+
+select{
+    display: block;
+}
