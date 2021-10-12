@@ -66,6 +66,50 @@ function test2() {
     })
 }
 
+function generateDropdownFromGenreIdList() {
+
+    let dropdown = document.getElementById('genre-dropdown');
+    dropdown.length = 0;
+    
+    let defaultOption = document.createElement('option');
+    defaultOption.text = 'Choose a genre';
+    
+    dropdown.add(defaultOption);
+    dropdown.selectedIndex = 0;
+    
+    const url = `https://api.themoviedb.org/3/genre/movie/list?api_key=${tmdbApiKey}`;
+    
+    fetch(url)  
+      .then(  
+        function(response) {  
+          if (response.status !== 200) {  
+            console.warn('Looks like there was a problem. Status Code: ' + 
+              response.status);
+              console.log(response);  
+            return;  
+          }
+    
+          // Examine the text in the response  
+          response.json().then(function(data) {  
+            console.log(data.genres[0].name, data.genres[0].id);
+            //console.log(data[0].id);
+  
+              let option;
+        
+            for (let i = 0; i < data.genres.length; i++) {
+              option = document.createElement('option');
+                option.text = data.genres[i].name;
+                option.value = data.genres[i].id;
+                dropdown.add(option);
+            }    
+          });  
+        }  
+      )  
+      .catch(function(err) {  
+        console.error('Fetch Error -', err);  
+      });
+  }
 
 test();
 test2();
+
