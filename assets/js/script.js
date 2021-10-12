@@ -21,10 +21,11 @@ function test2() {
         console.log(data);
         var $movie = document.getElementById("movie-list");
 
-        for (i = 0; i < 10; i++) {
+        var $row = document.createElement("div");
+        
+        $row.setAttribute("class", "row");
 
-            var $row = document.createElement("div");
-            $row.setAttribute("class", "row");
+        for (i = 0; i < 10; i++) {
 
             var $size = document.createElement("div");
             $size.setAttribute("class", "col s12 m3");
@@ -44,19 +45,19 @@ function test2() {
             var $poster = document.createElement("img");
             $poster.setAttribute("src", "https://image.tmdb.org/t/p/w300" + data.results[i].poster_path);
 
-            var $title = document.createElement("span");
-            $title.setAttribute("class", "card-title");
-            $title.textContent = data.results[i].title;
+            // var $title = document.createElement("span");
+            // $title.setAttribute("class", "card-title");
+            // $title.textContent = data.results[i].title;
 
-            var $description = document.createElement("p");
-            $description.textContent = data.results[i].overview;
+            // var $description = document.createElement("p");
+            // $description.textContent = data.results[i].overview;
 
             var $trailer = document.createElement("a");
             $trailer.setAttribute("href", "#");
             $trailer.textContent = ("This is a link");
 
-            $content.appendChild($title);
-            $content.appendChild($description);
+            // $content.appendChild($title);
+            // $content.appendChild($description);
             $img.appendChild($poster);
             $action.appendChild($trailer);
             $card.appendChild($img);
