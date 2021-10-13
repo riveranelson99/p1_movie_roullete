@@ -11,12 +11,7 @@ body{
     justify-content: center;
 }
 
-#navbar{
-    height: 15vh;
-}
-
 #toprated{
-    width: 115vw;
     height: 145vh;
     padding-bottom: 20vh;
 }
@@ -40,3 +35,4 @@ select{
 .row .col.m3 {
     width: 20%;
 }}
+
