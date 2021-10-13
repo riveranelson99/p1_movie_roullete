@@ -23,6 +23,9 @@ function movieGenre(genreId) {
     })
     .then(function(data) {
         console.log(data);
+
+        document.getElementById("movie-list").innerHTML = "";
+
         var $movie = document.getElementById("movie-list");
 
         var $row = document.createElement("div");        
