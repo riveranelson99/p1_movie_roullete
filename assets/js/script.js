@@ -25,9 +25,6 @@ function movieGenre(genreId) {
         console.log(data);
         var $movie = document.getElementById("movie-list");
 
-        // var $genre = document.getElementById("movies");
-        // $genre.innerHTML = "";
-
         var $row = document.createElement("div");        
         $row.setAttribute("class", "row");
 
@@ -60,19 +57,35 @@ function movieGenre(genreId) {
 
             var $trailer = document.createElement("a");
             $trailer.setAttribute("href", "#");
-            $trailer.textContent = ("This is a link");
+            $trailer.setAttribute("id", "youtube")
+            $trailer.textContent = data.results[i].title;
 
             // $content.appendChild($title);
             // $content.appendChild($description);
             $img.appendChild($poster);
             $action.appendChild($trailer);
             $card.appendChild($img);
-            $card.appendChild($content);
+            // $card.appendChild($content);
             $card.appendChild($action);
             $size.appendChild($card);
             $row.appendChild($size);
             $movie.appendChild($row);
+
         }
+        var $youTube = document.getElementById("youtube");
+
+        for (i = 0;i < $youTube.length; i++) {
+        $youTube[i].addEventListener("click", (getTrailerForMovie (i)))
+        }
+        // loop through posters
+        // event listener for each one
+        // each event listener will be the intended target
+        // $youTube.addEventListener("click", function() {
+        //     var $movieTitle = document.querySelectorAll(".card-title");
+        //     console.log(this.closest(".card-title"));
+        //     console.log($movieTitle);
+        //     getTrailerForMovie($movieTitle);
+        // })
     })
 }
 
@@ -153,7 +166,9 @@ function getTrailerForMovie(movieTitle) {
 generateDropdownFromGenreIdList();
 
 submitBtn.addEventListener("click", function() {
-    var dropdownSelection = document.getElementById("movies").value;;
+    var dropdownSelection = document.getElementById("movies").value;
     console.log(dropdownSelection);
     movieGenre(dropdownSelection);
 });
+
+// var $poster = document.querySelector("img");
