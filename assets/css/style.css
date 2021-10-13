@@ -13,7 +13,7 @@ body{
 }
 
 #toprated{
-    height: 145vh;
+    height: 75vh;
     padding-bottom: 20vh;
 }
 
@@ -35,5 +35,5 @@ select{
 @media only screen and (min-width: 601px) {
 .row .col.m3 {
     width: 202px;
-    height: 475px;
+    height: 350px;
 }}

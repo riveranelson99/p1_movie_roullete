@@ -37,9 +37,9 @@ function movieGenre(genreId) {
                 $size.setAttribute("class", "col s12 m3");
 
                 var $card = document.createElement("div");
-                $card.setAttribute("class", "card modal-trigger")
+                $card.setAttribute("class", "card")
                 $card.setAttribute("data-movie", data.results[i].title) //adding title behind a data-movie attribute
-                $card.setAttribute("data-bulk",JSON.stringify(data.results[i])) //adding all the movie data behind a data-bulk attribute
+                // $card.setAttribute("data-bulk",JSON.stringify(data.results[i])) //adding all the movie data behind a data-bulk attribute
 
                 var $img = document.createElement("div");
                 $img.setAttribute("class", "card-image");
@@ -47,8 +47,8 @@ function movieGenre(genreId) {
                 var $content = document.createElement("div");
                 $content.setAttribute("class", "card-content");
 
-                var $action = document.createElement("div");
-                $action.setAttribute("class", "card-action");
+                // var $action = document.createElement("div");
+                // $action.setAttribute("class", "card-action");
 
                 var $poster = document.createElement("img");
                 $poster.setAttribute("src", "https://image.tmdb.org/t/p/w300" + data.results[i].poster_path);
@@ -59,20 +59,20 @@ function movieGenre(genreId) {
 
                 // var $description = document.createElement("p");
                 // $description.textContent = data.results[i].overview;
-                var youtubeStringTitleQuery = data.results[i].title.replace(" ", "+")
+                // var youtubeStringTitleQuery = data.results[i].title.replace(" ", "+")
 
-                var $trailer = document.createElement("a");
-                $trailer.setAttribute("href", "https://www.youtube.com/results?search_query=" + youtubeStringTitleQuery);
-                $trailer.setAttribute("id", "youtube")
-                $trailer.textContent = data.results[i].title;
+                // var $trailer = document.createElement("a");
+                // $trailer.setAttribute("href", "https://www.youtube.com/results?search_query=" + youtubeStringTitleQuery);
+                // $trailer.setAttribute("id", "youtube")
+                // $trailer.textContent = data.results[i].title;
 
                 // $content.appendChild($title);
                 // $content.appendChild($description);
                 $img.appendChild($poster);
-                $action.appendChild($trailer);
+                // $action.appendChild($trailer);
                 $card.appendChild($img);
                 // $card.appendChild($content);
-                $card.appendChild($action);
+                // $card.appendChild($action);
                 $size.appendChild($card);
                 $row.appendChild($size);
                 $movie.appendChild($row);
@@ -181,7 +181,7 @@ async function getTrailerForMovie(movieTitle) {
         });
         return movieID;
 }
-getTrailerForMovie('The Matrix');
+// getTrailerForMovie('The Matrix');
 
 //test();
 //movieGenre();
@@ -193,22 +193,42 @@ submitBtn.addEventListener("click", function () {
     movieGenre(dropdownSelection);
 });
 
-$(document).on('click', '.card', function(event) {
-    console.log('this', this);
-    var title = $(this).attr('data-movie');
+$(document).on('click', '.card', function() {
+    var title = $(this).attr('data-movie');    
+    // title = $(this).attr('class', '');
     console.log(title);
 
-    getTrailerForMovie(title).then(function (movieID) {
+    getTrailerForMovie(title).then(function(movieID) {
         console.log(movieID);
-        // insert modal work here
     });
-
+    modalDisplay(title);
     // https://www.youtube.com/watch?v=
     // hit the youtube api to get its trailer and you can even potentially embed straight into your modal
-
 })
 
 function modalDisplay() {
-    // call modal here if we decide to call it
+    var $hidden = document.querySelector("body");
+    $hidden.setAttribute("style", "overflow: hidden");
+
+    var $movie = document.getElementById("movie-list");
+
+    var $modalRow = document.createElement("div");
+    $modalRow.setAttribute("id", "modal1");
+    $modalRow.setAttribute("class", "modal open");
+    $modalRow.setAttribute("tabindex", "0");
+    $modalRow.setAttribute("style", "z-index: 1003; display: block; opacity: 1; top: 50%; transform: scaleX(1) scaleY(1)")
+    
+    var $modalTitle = document.createElement("h4");
+    $modalTitle.textContent = "test of the modal that will display trailer";
+
+    var $modalOverlay = document.createElement("div");
+    $modalOverlay.setAttribute("class", "modal-overlay");
+    $modalOverlay.setAttribute("style", "z-index: 1002;display: block;opacity: 0.5")
+
+    var $trailer = document.createElement("div");
+
+    $modalRow.appendChild($modalTitle);
+    $movie.appendChild($modalRow);
+    $movie.appendChild($modalOverlay);
 }
 // var $poster = document.querySelector("img");
