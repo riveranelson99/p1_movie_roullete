@@ -1,17 +1,18 @@
 var $apiKey = "67a7bac5263ae44afd8231f3402a5637";
-var $tmdbGenres = "https://api.themoviedb.org/3/genre/movie/list?api_key=67a7bac5263ae44afd8231f3402a5637";
+var $ytApiKey ="AIzaSyDffwDfF2JLHOkYqWgIXEWlnOZOjPhkMs4"
+//var $tmdbGenres = "https://api.themoviedb.org/3/genre/movie/list?api_key=67a7bac5263ae44afd8231f3402a5637";
 var submitBtn = document.querySelector('.btn');
 
 
-function test() {
-    fetch($tmdbGenres)
-    .then(function(response) {
-        return response.json();
-    })
-    .then(function(data) {
-        console.log(data);
-    })
-}
+//function test() {
+//    fetch($tmdbGenres)
+//    .then(function(response) {
+//        return response.json();
+//    })
+//    .then(function(data) {
+//        console.log(data);
+//    })
+//}
 
 function movieGenre (genreId) {
     var $tmdbTop = `https://api.themoviedb.org/3/discover/movie?api_key=${$apiKey}&with_genres=${genreId}&language=en-US&vote_count.gte=2500&sort_by=popularity.desc`;
@@ -129,6 +130,20 @@ function generateDropdownFromGenreIdList() {
     .catch(function(err) {  
         console.error('Fetch Error -', err);  
     });
+}
+
+function getTrailerForMovie(movieTitle) {
+    var $ytRequestUrl = `https://content-youtube.googleapis.com/youtube/v3/search?type=video&q=${movieTitle} Official Trailer&part=snippet&maxResults=1&key=${$ytApiKey}`;
+
+    fetch($ytRequestUrl)
+     .then(function (response) {
+         return response.json();
+     })
+     .then(function (data) {
+         console.log(data);
+        
+     });
+
 }
 
 //test();
