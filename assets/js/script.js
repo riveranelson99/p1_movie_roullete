@@ -37,7 +37,7 @@ function movieGenre(genreId) {
                 $size.setAttribute("class", "col s12 m3");
 
                 var $card = document.createElement("div");
-                $card.setAttribute("class", "card")
+                $card.setAttribute("class", "card modal-trigger")
                 $card.setAttribute("data-movie", data.results[i].title) //adding title behind a data-movie attribute
                 $card.setAttribute("data-bulk",JSON.stringify(data.results[i])) //adding all the movie data behind a data-bulk attribute
 
@@ -167,18 +167,19 @@ function generateDropdownFromGenreIdList() {
         });
 }
 
-function getTrailerForMovie(movieTitle) {
+async function getTrailerForMovie(movieTitle) {
     var $ytRequestUrl = `https://content-youtube.googleapis.com/youtube/v3/search?type=video&q=${movieTitle} Official Trailer&part=snippet&maxResults=1&key=${$ytApiKey}`;
+    var movieID;
 
-    fetch($ytRequestUrl)
+    await fetch($ytRequestUrl)
         .then(function (response) {
             return response.json();
         })
         .then(function (data) {
             console.log(data);
-
+            movieID = data.items[0].id.videoId;
         });
-
+        return movieID;
 }
 getTrailerForMovie('The Matrix');
 
@@ -194,15 +195,20 @@ submitBtn.addEventListener("click", function () {
 
 $(document).on('click', '.card', function(event) {
     console.log('this', this);
-    var dataBulk = JSON.parse($(this).attr('data-bulk'));
-    var title = $(this).attr('data-title');
-    console.log(dataBulk);
+    var title = $(this).attr('data-movie');
     console.log(title);
+
+    getTrailerForMovie(title).then(function (movieID) {
+        console.log(movieID);
+        // insert modal work here
+    });
+
+    // https://www.youtube.com/watch?v=
     // hit the youtube api to get its trailer and you can even potentially embed straight into your modal
 
 })
 
 function modalDisplay() {
-
+    // call modal here if we decide to call it
 }
 // var $poster = document.querySelector("img");
