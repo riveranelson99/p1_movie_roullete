@@ -14,7 +14,7 @@ var submitBtn = document.querySelector('.btn');
 //    })
 //}
 
-function movieGenre (genreId) {
+function movieGenre(genreId) {
     var $tmdbTop = `https://api.themoviedb.org/3/discover/movie?api_key=${$apiKey}&with_genres=${genreId}&language=en-US&vote_count.gte=2500&sort_by=popularity.desc`;
 
     fetch($tmdbTop)
@@ -28,8 +28,7 @@ function movieGenre (genreId) {
 
         var $movie = document.getElementById("movie-list");
 
-        var $row = document.createElement("div");
-        
+        var $row = document.createElement("div");        
         $row.setAttribute("class", "row");
 
         for (i = 0; i < 10; i++) {
@@ -61,19 +60,35 @@ function movieGenre (genreId) {
 
             var $trailer = document.createElement("a");
             $trailer.setAttribute("href", "#");
-            $trailer.textContent = ("This is a link");
+            $trailer.setAttribute("id", "youtube")
+            $trailer.textContent = data.results[i].title;
 
             // $content.appendChild($title);
             // $content.appendChild($description);
             $img.appendChild($poster);
             $action.appendChild($trailer);
             $card.appendChild($img);
-            $card.appendChild($content);
+            // $card.appendChild($content);
             $card.appendChild($action);
             $size.appendChild($card);
             $row.appendChild($size);
             $movie.appendChild($row);
+
         }
+        var $youTube = document.getElementById("youtube");
+
+        for (i = 0;i < $youTube.length; i++) {
+        $youTube[i].addEventListener("click", (getTrailerForMovie (i)))
+        }
+        // loop through posters
+        // event listener for each one
+        // each event listener will be the intended target
+        // $youTube.addEventListener("click", function() {
+        //     var $movieTitle = document.querySelectorAll(".card-title");
+        //     console.log(this.closest(".card-title"));
+        //     console.log($movieTitle);
+        //     getTrailerForMovie($movieTitle);
+        // })
     })
 }
 
@@ -139,13 +154,13 @@ function getTrailerForMovie(movieTitle) {
     var $ytRequestUrl = `https://content-youtube.googleapis.com/youtube/v3/search?type=video&q=${movieTitle} Official Trailer&part=snippet&maxResults=1&key=${$ytApiKey}`;
 
     fetch($ytRequestUrl)
-     .then(function (response) {
-         return response.json();
-     })
-     .then(function (data) {
-         console.log(data);
+    .then(function (response) {
+        return response.json();
+    })
+    .then(function (data) {
+        console.log(data);
         
-     });
+    });
 
 }
 
@@ -157,4 +172,6 @@ submitBtn.addEventListener("click", function() {
     var dropdownSelection = document.getElementById("movies").value;
     console.log(dropdownSelection);
     movieGenre(dropdownSelection);
-  });
+});
+
+// var $poster = document.querySelector("img");
