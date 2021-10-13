@@ -25,8 +25,10 @@ function movieGenre(genreId) {
         console.log(data);
         var $movie = document.getElementById("movie-list");
 
-        var $row = document.createElement("div");
-        
+        // var $genre = document.getElementById("movies");
+        // $genre.innerHTML = "";
+
+        var $row = document.createElement("div");        
         $row.setAttribute("class", "row");
 
         for (i = 0; i < 10; i++) {
@@ -137,7 +139,7 @@ function generateDropdownFromGenreIdList() {
 generateDropdownFromGenreIdList();
 
 submitBtn.addEventListener("click", function() {
-    var dropdownSelection = document.getElementById("movies").value;
+    var dropdownSelection = document.getElementById("movies").value;;
     console.log(dropdownSelection);
     movieGenre(dropdownSelection);
 });
