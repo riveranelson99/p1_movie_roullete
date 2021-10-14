@@ -15,7 +15,7 @@ var submitBtn = document.querySelector('.btn');
 //}
 
 function movieGenre(genreId) {
-    var $tmdbTop = `https://api.themoviedb.org/3/discover/movie?api_key=${$apiKey}&with_genres=${genreId}&language=en-US&vote_count.gte=2500&sort_by=popularity.desc`;
+    var $tmdbTop = `https://api.themoviedb.org/3/discover/movie?api_key=${$apiKey}&with_genres=${genreId}&language=en-US&vote_count.gte=750&sort_by=popularity.desc`;
 
     fetch($tmdbTop)
         .then(function (response) {
