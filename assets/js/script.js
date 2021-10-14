@@ -179,7 +179,7 @@ async function getTrailerForMovie(movieTitle) {
             console.log(data);
             movieID = data.items[0].id.videoId;
         });
-        return movieID;
+        return `https://www.youtube.com/watch?v=${movieID}`;
 }
 // getTrailerForMovie('The Matrix');
 
@@ -200,6 +200,7 @@ $(document).on('click', '.card', function() {
 
     getTrailerForMovie(title).then(function(movieID) {
         console.log(movieID);
+        window.open(movieID, "_blank");
     });
     modalDisplay();
     // https://www.youtube.com/watch?v=
