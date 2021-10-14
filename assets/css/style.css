@@ -1,3 +1,4 @@
+/*Minor css modifications made in order to manipulate materialize in the fashion that we so desired*/
 * ::before ::after {
     display: flex;
 }
@@ -14,7 +15,7 @@ body{
 
 #toprated{
     height: 75vh;
-    padding-bottom: 20vh;
+    padding-bottom: 90vh;
 }
 
 #navtxt{
@@ -34,6 +35,6 @@ select{
 
 @media only screen and (min-width: 601px) {
 .row .col.m3 {
-    width: 202px;
+    width: 230px;
     height: 350px;
 }}

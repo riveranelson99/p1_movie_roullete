@@ -2,19 +2,22 @@
 <html lang="en">
 
 <head>
+  <!-- Link appropriate outside resources to be used -->
+  <!-- We will utilize materialize for the brunt force of the css properties as bootstrap cannot be used -->
+  <!-- We will also be utilizing some of google fonts to help out with the aesthetics of our page -->
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,300&display=swap');
-  </style>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
   </style>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,300&display=swap');
+  </style>
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
@@ -22,68 +25,36 @@
 <body class="grey lighten-2">
   <nav id="navbar">
     <div class="nav-wrapper teal lighten-2 z-depth-4">
-
       <a href="#" class="brand-logo center" id="navtxt"><i class="large material-icons">movie</i>Movie Roulette</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <div style="background-image: url('https://imagesvc.meredithcorp.io/v3/mm/image?q=85&c=sc&poi=face&w=2000&h=1000&url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F24%2F2020%2F07%2F24%2FEmpty-movie-theater.jpg');">
+        <div
+          style="background-image: url('https://imagesvc.meredithcorp.io/v3/mm/image?q=85&c=sc&poi=face&w=2000&h=1000&url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F24%2F2020%2F07%2F24%2FEmpty-movie-theater.jpg');">
       </ul>
     </div>
   </nav>
+
   <main class="container blue lighten-5 z-depth-2">
     <div class="blue-text text-darken-2" id="drop-down">
       <div class="input-field col s12">
         <select id="movies">
           <option value="" disabled selected>Choose your option</option>
-          <option value="1">Option 1</option>
-          <option value="2">Option 2</option>
-          <option value="3">Option 3</option>
         </select>
         <button"btn class="btn waves-effect waves-light" type="submit" name="action">Submit
           <i class="material-icons right">send</i></button>
       </div>
-
     </div>
 
     <h3 id="toptenmovies" class="red lighten-2">
-        Top rated movies by chosen genre:
-      </h3>
+      Top rated movies by chosen genre:
+    </h3>
 
   </main>
+
   <section class="container yellow lighten-5 z-depth-3" id="toprated">
     <div id="movie-list" class="text-darken-2">
-
-      <!-- <div id="modal1" class="modal" tabindex="0" style="z-index: 1003; display: none; opacity: 0; top: 4%; transform: scaleX(0.8) scaleY(0.8);">
-        <div class="modal-content">
-          <h4>Test</h4>
-        </div>
-      </div> -->
-
-      <!-- <div id="modal1" class="modal open" tabindex="0" style="z-index: 1003; display: block; opacity: 1; top: 10%; transform: scaleX(1) scaleY(1);">
-        <div class="modal-content">
-          <h4>Test</h4>
-        </div>
-      </div> -->
-      
-
-      <!-- <div class="row">
-    <div class="col s12 m6">
-        <div class="card">
-          <div class="card-image">
-            <img id="sample" src="assets/images/sample-1.jpg ">
-          </div>
-          <div id="title" class="card-content">
-            <span class="card-title"></span>
-            <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
-          </div>
-          <div class="card-action">
-            <a href="#">This is a link</a>
-          </div>
-        </div>
-    </div>
-  </div> -->
-
     </div>
   </section>
+
   <footer class="page-footer">
     <div class="container">
       <div class="row">
@@ -94,22 +65,23 @@
         <div class="col l4 offset-l2 s12">
           <h5 class="white-text">Created By:</h5>
           <ul>
-            <li><a class="grey-text text-lighten-3" href="https://github.com/riveranelson99">Nelson Rivera</a></li>
-            <li><a class="grey-text text-lighten-3" href="https://github.com/j-goldrath">Cameron McDougall</a></li>
-            <li><a class="grey-text text-lighten-3" href="https://github.com/CJMc0d3">Jonathan Goldrath</a></li>
+            <li><a class="grey-text text-lighten-3" target="_blank" href="https://github.com/j-goldrath">Jonathan Goldrath</a></li>
+            <li><a class="grey-text text-lighten-3" target="_blank" href="https://github.com/CJMc0d3">Cameron McDougall</a></li>
+            <li><a class="grey-text text-lighten-3" target="_blank" href="https://github.com/riveranelson99">Nelson Rivera</a></li>
           </ul>
         </div>
       </div>
     </div>
+
     <div class="footer-copyright">
       <div class="container">
         Northwestern Bootcamp 2021
       </div>
     </div>
   </footer>
+
+  <!-- We bring in Jquery for one function that operates easier with its utilization -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="assets/js/script.js"></script>
 </body>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="assets/js/script.js"></script>
-
 </html>
