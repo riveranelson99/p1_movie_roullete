@@ -201,34 +201,47 @@ $(document).on('click', '.card', function() {
     getTrailerForMovie(title).then(function(movieID) {
         console.log(movieID);
     });
-    modalDisplay(title);
+    modalDisplay();
     // https://www.youtube.com/watch?v=
     // hit the youtube api to get its trailer and you can even potentially embed straight into your modal
 })
 
-function modalDisplay() {
-    var $hidden = document.querySelector("body");
-    $hidden.setAttribute("style", "overflow: hidden");
+// function modalDisplay() {
+//     var $hidden = document.querySelector("body");
+//     $hidden.setAttribute("style", "overflow: hidden");
 
-    var $movie = document.getElementById("movie-list");
+//     var $movie = document.getElementById("movie-list");
 
-    var $modalRow = document.createElement("div");
-    $modalRow.setAttribute("id", "modal1");
-    $modalRow.setAttribute("class", "modal open");
-    $modalRow.setAttribute("tabindex", "0");
-    $modalRow.setAttribute("style", "z-index: 1003; display: block; opacity: 1; top: 50%; transform: scaleX(1) scaleY(1)")
-    
-    var $modalTitle = document.createElement("h4");
-    $modalTitle.textContent = "test of the modal that will display trailer";
+//     var $modalRow = document.createElement("div");
+//     $modalRow.setAttribute("id", "modal1");
+//     $modalRow.setAttribute("class", "modal open");
+//     $modalRow.setAttribute("tabindex", "0");
+//     $modalRow.setAttribute("style", "z-index: 1003; display: block; opacity: 1; top: 50%; transform: scaleX(1) scaleY(1), dismissible: true")
+//     var $modalTitle = document.createElement("h4");
+//     $modalTitle.textContent = "test of the modal that will display trailer";
 
-    var $modalOverlay = document.createElement("div");
-    $modalOverlay.setAttribute("class", "modal-overlay");
-    $modalOverlay.setAttribute("style", "z-index: 1002;display: block;opacity: 0.5")
+//     var $modalOverlay = document.createElement("div");
+//     $modalOverlay.setAttribute("class", "modal-overlay");
+//     $modalOverlay.setAttribute("style", "z-index: 1002;display: block;opacity: 0.5")
 
-    var $trailer = document.createElement("div");
+//     var $trailer = document.createElement("div");
 
-    $modalRow.appendChild($modalTitle);
-    $movie.appendChild($modalRow);
-    $movie.appendChild($modalOverlay);
-}
+//     $modalRow.appendChild($modalTitle);
+//     $movie.appendChild($modalRow);
+//     $movie.appendChild($modalOverlay);
+// }
+
+// var searchMemory;
+//     if (JSON.parse(localStorage.getItem("history")) != null){        
+//         searchMemory = JSON.parse(localStorage.getItem("history"));
+//     } else {
+//         searchMemory = [];
+//     }
+
+// function setSearch(search) {
+//     if (!searchMemory.includes(search)) {
+//         searchMemory.push(search);
+//         localStorage.setItem("history", JSON.stringify(searchMemory));
+//     }
+// }
 // var $poster = document.querySelector("img");
