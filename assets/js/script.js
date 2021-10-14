@@ -118,8 +118,13 @@ submitBtn.addEventListener("click", function () {
     var dropdownSelection = document.getElementById("movies").value;
     console.log(dropdownSelection);
     movieGenre(dropdownSelection);
+    rmv()
+    
 });
-
+function rmv() {
+var element = document.getElementById("toprated");
+    element.classList.remove("hide");
+}
 // This event listener looks to see when a user clicks on a movie card
 // The movie card then returns the information for the specific movie utilizing both apis to get the movie information and provide a redirect to the trailer of the selected movie
 $(document).on('click', '.card', function() {
