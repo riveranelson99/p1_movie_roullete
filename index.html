@@ -22,7 +22,7 @@
 </head>
 
 
-<body class="grey lighten-2">
+<body class="grey lighten-2 page-container">
   <nav id="navbar">
     <div class="nav-wrapper teal lighten-2 z-depth-4">
       <a href="#" class="brand-logo center" id="navtxt"><i class="large material-icons">movie</i>Movie Roulette</a>
@@ -44,44 +44,49 @@
       </div>
     </div>
 
-    <h3 id="toptenmovies" class="red lighten-2">
+    <h5 id="toptenmovies" class="red lighten-2">
       Top rated movies by chosen genre:
-    </h3>
+    </h5>
 
   </main>
 
-  <section class="container yellow lighten-5 z-depth-3" id="toprated">
+  <section class="hide container yellow lighten-5 z-depth-3" id="toprated">
     <div id="movie-list" class="text-darken-2">
     </div>
   </section>
 
-  <footer class="page-footer">
-    <div class="container">
-      <div class="row">
-        <div class="col l6 s12">
-          <h5 class="white-text" id="footertitle">Movie Roulette</h5>
-          <p class="grey-text text-lighten-4"></p>
-        </div>
-        <div class="col l4 offset-l2 s12">
-          <h5 class="white-text">Created By:</h5>
-          <ul>
-            <li><a class="grey-text text-lighten-3" target="_blank" href="https://github.com/j-goldrath">Jonathan Goldrath</a></li>
-            <li><a class="grey-text text-lighten-3" target="_blank" href="https://github.com/CJMc0d3">Cameron McDougall</a></li>
-            <li><a class="grey-text text-lighten-3" target="_blank" href="https://github.com/riveranelson99">Nelson Rivera</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <div class="footer-copyright">
+  <div id="content-wrap">
+    <footer class="page-footer">
       <div class="container">
-        Northwestern Bootcamp 2021
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text" id="footertitle">Movie Roulette</h5>
+            <p class="grey-text text-lighten-4"></p>
+          </div>
+          <div class="col l4 offset-l2 s12">
+            <h5 class="white-text">Created By:</h5>
+            <ul>
+              <li><a class="grey-text text-lighten-3" target="_blank" href="https://github.com/j-goldrath">Jonathan
+                  Goldrath</a></li>
+              <li><a class="grey-text text-lighten-3" target="_blank" href="https://github.com/CJMc0d3">Cameron
+                  McDougall</a></li>
+              <li><a class="grey-text text-lighten-3" target="_blank" href="https://github.com/riveranelson99">Nelson
+                  Rivera</a></li>
+            </ul>
+          </div>
+        </div>
       </div>
-    </div>
-  </footer>
 
+      <div class="footer-copyright">
+        <div class="container">
+          Northwestern Bootcamp 2021
+        </div>
+      </div>
+    </footer>
+  </div>
   <!-- We bring in Jquery for one function that operates easier with its utilization -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="assets/js/script.js"></script>
 </body>
+
 </html>
