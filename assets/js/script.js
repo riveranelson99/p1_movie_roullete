@@ -25,7 +25,7 @@ function movieGenre(genreId) {
             var $row = document.createElement("div");
             $row.setAttribute("class", "row");
 
-            for (i = 0; i < 10; i++) {
+            for (i = 0; i < 12; i++) {
                 var $size = document.createElement("div");
                 $size.setAttribute("class", "col s12 m3 l12");
 

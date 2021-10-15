@@ -12,7 +12,7 @@ Movie roulette is an app that allows users to search for movies based on an inte
 
 # screenshot
 
-![Generator Example](assets/images/project-1-screenshot(2).png)
+![Generator Example](assets/images/project-1-screenshot.png)
 
 # Deployed Application
 

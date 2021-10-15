@@ -8,6 +8,12 @@ body{
     background-image: url('https://imagesvc.meredithcorp.io/v3/mm/image?q=85&c=sc&poi=face&w=2000&h=1000&url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F24%2F2020%2F07%2F24%2FEmpty-movie-theater.jpg');
 }
 
+.card,
+.card-image,
+img {
+    margin-top: 25px;
+}
+
 #drop-down{
     height: 65px;
     justify-content: center;
@@ -38,8 +44,6 @@ footer {
 }
 
 #toprated{
-    height: 75vh;
-    padding-bottom: 90vh;
     justify-content: space-evenly;
     align-items: center;
 }
